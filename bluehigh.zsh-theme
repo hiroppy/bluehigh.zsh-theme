@@ -83,7 +83,7 @@ if is-at-least 4.3.11; then
       | tr -d ' ')
 
     if [[ "$ahead" -gt 0 ]]; then
-      PUSH_STATUS="%{$FG[148]%}🔔 :P${ahead}%{$reset_color%}"
+      PUSH_STATUS="%{$FG[148]%}🔔 :P${ahead}:%{$reset_color%}"
     else
       PUSH_STATUS=""
     fi
@@ -103,7 +103,7 @@ if is-at-least 4.3.11; then
     nomerged=$(command git rev-list master..${hook_com[branch]} 2>/dev/null | wc -l | tr -d ' ')
 
     if [[ "$nomerged" -gt 0 ]] ; then
-      MARGE_STATUS="%{$FG[208]%}🎃 :M${nomerged}%{$reset_color%}"
+      MARGE_STATUS="%{$FG[208]%}🎃 :M${nomerged}:%{$reset_color%}"
     else
       MARGE_STATUS=""
     fi
@@ -117,7 +117,7 @@ if is-at-least 4.3.11; then
     local stash
     stash=$(command git stash list 2>/dev/null | wc -l | tr -d ' ')
     if [[ "${stash}" -gt 0 ]]; then
-      STASH_STATUS="%{$FG[033]%}📬 :S${stash}%{$reset_color%}"
+      STASH_STATUS="%{$FG[033]%}📬 :S${stash}:%{$reset_color%}"
     else
       STASH_STATUS=""
     fi
@@ -136,7 +136,7 @@ function +vi-git-nomerge-master() {
   fi
 
   if command git branch --no-merged 2>/dev/null | command grep 'master' > /dev/null 2>&1 ; then
-    NOMERGE_MASTER_STATUS="%{$FG[199]%}🚨 :R%{$reset_color%}"
+    NOMERGE_MASTER_STATUS="%{$FG[199]%}🚨 :R:%{$reset_color%}"
   else
     NOMERGE_MASTER_STATUS=""
   fi
