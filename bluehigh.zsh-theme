@@ -7,6 +7,9 @@ autoload -Uz vcs_info
 autoload -U add-zsh-hook
 autoload -Uz is-at-least
 
+# right prompt
+RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/battery.rb)"
+
 PROMPT_SUCCESS_COLOR=$FG[117]
 PROMPT_FAILURE_COLOR=$FG[124]
 PROMPT_VCS_INFO_COLOR=$FG[242]
@@ -16,7 +19,7 @@ GIT_CLEAN_COLOR=$FG[118]
 GIT_PROMPT_INFO=$FG[012]
 
 PROMPT='%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}$PUSH_STATUS$MARGE_STATUS$STASH_STATUS$NOMERGE_MASTER_STATUS%{$PROMPT_PROMPT%} ᐅ%{$reset_color%} '
-RPROMPT="%{$FG[195]%}%*%{$reset_color%}"
+
 #RPS1="${return_code}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
