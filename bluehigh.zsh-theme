@@ -7,9 +7,6 @@ autoload -Uz vcs_info
 autoload -U add-zsh-hook
 autoload -Uz is-at-least
 
-# right prompt
-RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
-
 PROMPT_SUCCESS_COLOR=$FG[117]
 PROMPT_FAILURE_COLOR=$FG[124]
 PROMPT_VCS_INFO_COLOR=$FG[242]
@@ -147,6 +144,9 @@ function +vi-git-nomerge-master() {
 
 function _update_vcs_info_msg() {
   LANG=en_US.UTF-8 vcs_info
+
+  # right prompt
+  RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
 
   if [[ -z ${vcs_info_msg_0_} ]]; then
     STASH_STATUS=""
