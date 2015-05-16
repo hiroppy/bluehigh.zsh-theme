@@ -2,7 +2,8 @@
 
 ### This is zsh-theme!
 
-please import `~/.oh-my-zsh/theme/bluehigh`
+please import `sh install.sh`  
+please change `ZSH_THEME="bluehigh"` in `~/.zshrc`
 
 ## Screenshots
 ![](images/screen1.png)
