@@ -8,7 +8,7 @@ autoload -U add-zsh-hook
 autoload -Uz is-at-least
 
 # right prompt
-RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/battery.rb)"
+RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
 
 PROMPT_SUCCESS_COLOR=$FG[117]
 PROMPT_FAILURE_COLOR=$FG[124]
