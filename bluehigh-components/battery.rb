@@ -7,4 +7,8 @@ empty = '🔸'
 filled = '🔹'
 
 num_filled = (percent_battery/10).ceil - 1
-puts (filled * num_filled) + empty * (10 - num_filled)
+if percent_battery == 100 then
+	puts filled * 10
+else
+	puts (filled * num_filled) + empty * (10 - num_filled)
+end
