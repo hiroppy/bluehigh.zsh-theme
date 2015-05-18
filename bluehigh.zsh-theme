@@ -7,6 +7,9 @@ autoload -Uz vcs_info
 autoload -U add-zsh-hook
 autoload -Uz is-at-least
 
+zstyle ':vcs_info:git:*' use-simple true
+zstyle ':vcs_info:*' enable git
+
 PROMPT_SUCCESS_COLOR=$FG[117]
 PROMPT_FAILURE_COLOR=$FG[124]
 PROMPT_VCS_INFO_COLOR=$FG[242]
