@@ -4,11 +4,11 @@
 setopt promptsubst
 
 autoload -Uz vcs_info
-autoload -U add-zsh-hook
+autoload -Uz add-zsh-hook
 autoload -Uz is-at-least
 
-zstyle ':vcs_info:git:*' use-simple true
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' use-simple true
 
 PROMPT_SUCCESS_COLOR=$FG[117]
 PROMPT_FAILURE_COLOR=$FG[124]
@@ -18,7 +18,7 @@ GIT_DIRTY_COLOR=$FG[133]
 GIT_CLEAN_COLOR=$FG[118]
 GIT_PROMPT_INFO=$FG[012]
 
-PROMPT='%{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}$PUSH_STATUS$MARGE_STATUS$STASH_STATUS$NOMERGE_MASTER_STATUS%{$PROMPT_PROMPT%} ᐅ%{$reset_color%} '
+PROMPT='%(?.%F{green}(๑˃̵ᴗ˂̵)و%f.%F{red}｡◕ˇ_ˇ◕｡%f) %{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}$PUSH_STATUS$MARGE_STATUS$STASH_STATUS$NOMERGE_MASTER_STATUS%{$PROMPT_PROMPT%} ᐅ%{$reset_color%} '
 
 #RPS1="${return_code}"
 
