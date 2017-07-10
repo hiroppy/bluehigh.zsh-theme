@@ -18,6 +18,8 @@ GIT_DIRTY_COLOR=$FG[133]
 GIT_CLEAN_COLOR=$FG[118]
 GIT_PROMPT_INFO=$FG[012]
 
+# PROMPT='%{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}$PUSH_STATUS$MARGE_STATUS$STASH_STATUS$NOMERGE_MASTER_STATUS%{$PROMPT_PROMPT%} ᐅ%{$reset_color%} '
+
 PROMPT='%(?.%{$FG[048]%}(๑˃̵ᴗ˂̵)و%{$reset_color%}.%{$FG[198]%}｡◕ˇ_ˇ◕｡%{$reset_color%}) %{$PROMPT_SUCCESS_COLOR%}%~%{$reset_color%} %{$GIT_PROMPT_INFO%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status) %{$reset_color%}$PUSH_STATUS$MARGE_STATUS$STASH_STATUS$NOMERGE_MASTER_STATUS%{$PROMPT_PROMPT%} ᐅ%{$reset_color%} '
 
 #RPS1="${return_code}"
@@ -145,19 +147,19 @@ function +vi-git-nomerge-master() {
   fi
 }
 
-function _update_vcs_info_msg() {
-  LANG=en_US.UTF-8 vcs_info
+# function _update_vcs_info_msg() {
+#   LANG=en_US.UTF-8 vcs_info
+#
+#   # right prompt
+#   # RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
+#   RPROMPT="🐣  < %{$FG[195]%}%*%{$reset_color%}"
+#
+#   if [[ -z ${vcs_info_msg_0_} ]]; then
+#     STASH_STATUS=""
+#     MARGE_STATUS=""
+#     PUSH_STATUS=""
+#     NOMERGE_MASTER_STATUS=""
+#   fi
+# }
 
-  # right prompt
-  # RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
-  RPROMPT="🐣  < %{$FG[195]%}%*%{$reset_color%}"
-
-  if [[ -z ${vcs_info_msg_0_} ]]; then
-    STASH_STATUS=""
-    MARGE_STATUS=""
-    PUSH_STATUS=""
-    NOMERGE_MASTER_STATUS=""
-  fi
-}
-
-add-zsh-hook precmd _update_vcs_info_msg
+# add-zsh-hook precmd _update_vcs_info_msg
