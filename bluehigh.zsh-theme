@@ -147,19 +147,19 @@ function +vi-git-nomerge-master() {
   fi
 }
 
-# function _update_vcs_info_msg() {
-#   LANG=en_US.UTF-8 vcs_info
-#
-#   # right prompt
-#   # RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
-#   RPROMPT="🐣  < %{$FG[195]%}%*%{$reset_color%}"
-#
-#   if [[ -z ${vcs_info_msg_0_} ]]; then
-#     STASH_STATUS=""
-#     MARGE_STATUS=""
-#     PUSH_STATUS=""
-#     NOMERGE_MASTER_STATUS=""
-#   fi
-# }
+function _update_vcs_info_msg() {
+  LANG=en_US.UTF-8 vcs_info
 
-# add-zsh-hook precmd _update_vcs_info_msg
+  # right prompt
+  # RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
+  RPROMPT="🐣  < %{$FG[195]%}%*%{$reset_color%}"
+
+  if [[ -z ${vcs_info_msg_0_} ]]; then
+    STASH_STATUS=""
+    MARGE_STATUS=""
+    PUSH_STATUS=""
+    NOMERGE_MASTER_STATUS=""
+  fi
+}
+
+add-zsh-hook precmd _update_vcs_info_msg
