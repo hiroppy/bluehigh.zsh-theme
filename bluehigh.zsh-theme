@@ -152,7 +152,7 @@ function _update_vcs_info_msg() {
 
   # right prompt
   # RPROMPT="%{$FG[195]%}%*%{$reset_color%}$(ruby ~/.oh-my-zsh/themes/bluehigh-components/battery.rb)"
-  RPROMPT="🐣  < %{$FG[195]%}%*%{$reset_color%}"
+  # RPROMPT="🐣  < %{$FG[195]%}%*%{$reset_color%}"
 
   if [[ -z ${vcs_info_msg_0_} ]]; then
     STASH_STATUS=""
